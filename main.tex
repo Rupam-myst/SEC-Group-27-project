@@ -89,7 +89,164 @@ Here you will describe the process of creating the repository, writing the C cod
 Edit a mind reader application.
 
 \textbf{Details:} \\
-Provide the specifics of what changes were made to the mind reader application and how the problems were resolved. You can include any code or technical explanations here.
+
+\title{Mind Reader Application - Lab Assignment}
+\author{Name : Arijit Podder}
+\date{Semester : 2\\
+Department : Information Science \\
+Course : B.Sc in IT (Artificial Intelligence) \\
+Subject : Software Tools and Technology \\
+Session : 2023-24 \\
+Roll No : 30054623001 \\
+Registration No : 233002410553}
+
+\maketitle
+
+\section*{Task}
+Your professor created a mind reader application and wants you to try it out. After running the program, you found the submit button looks dull. You renamed it "Chin Tapak Dum Dum," but the button became disproportionate. Your task is to fix the button issue and create a pull request with the solution.
+
+\section*{Procedure}
+
+\subsection*{1. Clone the Repository}
+\begin{itemize}
+    \item I used GitHub Desktop to clone the repository:\\ 
+    \url{https://github.com/GeekAyan/STT}
+    \item Then I opened GitHub Desktop, clicked on "File" then "Clone Repository", pasted the URL, and selected my local directory.
+    \item Navigate to the project directory.
+\end{itemize}
+
+\subsection*{2. Run the Application}
+\begin{itemize}
+    \item I opened the project in Visual Studio Code.
+    \item Then I followed the detailed run instructions provided in the \texttt{README.md} file to set up any necessary dependencies and configurations.
+    \item I ran the application to ensure everything is working as expected.
+    \item Observe the application's user interface, particularly the submit button.
+\end{itemize}
+
+\subsection*{3. Identify and Rename the Button}
+\begin{itemize}
+    \item Locate the submit button code in the application’s source files.
+    \item Rename the button text to "Chin Tapak Dum Dum."
+    \item Notice that the button has become disproportionate due to the increased text length.
+\end{itemize}
+
+\subsection*{4. Fix the Button Size}
+\begin{itemize}
+    \item Analyze the layout code that controls the button's appearance.
+    \item Adjust the width and height properties or use appropriate CSS/JavaFX adjustments to make the button proportionate.
+    \item Test the application to ensure the button now displays correctly and does not affect other UI elements.
+\end{itemize}
+
+\subsection*{5. Commit and Push the Changes}
+\begin{itemize}
+    \item Commit the changes with a descriptive message: \texttt{git commit -m "Improve Button Proportions and Renamed the Submit Button"}.
+    \item Push the changes to your forked repository on GitHub.
+\end{itemize}
+
+\subsection*{6. Create a Pull Request}
+\begin{itemize}
+    \item I went to the original GitHub repository on my web browser.
+    \item Clicked on "Pull Requests" then "New Pull Request."
+    \item Compare my branch with the main branch of the original repository.
+    \item Added a title and description explaining my changes and why they were made.
+    \item Submit the pull request to the original repository.
+\end{itemize}
+
+\subsection*{7. Review and Merge}
+\begin{itemize}
+    \item Wait for the repository owner to review my pull request.
+    \item If accepted, the changes will be merged into the main project.
+\end{itemize}
+
+\newpage
+
+\section*{Symbol Mind Reading Java Application}
+\begin{verbatim}
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Random;
+
+public class SymbolApp extends Frame implements ActionListener {
+
+    private Label[] symbolLabels = new Label[99];
+    private Button submitButton;
+    private String specialSymbol;
+    private String selectedSymbol;
+
+    public SymbolApp() {
+        // Generate a random special symbol
+        Random rand = new Random();
+        specialSymbol = Character.toString((char) (rand.nextInt(94) + 33)); 
+        selectedSymbol = specialSymbol;
+
+        // Setting up the main frame
+        setLayout(new BorderLayout());
+        setSize(800, 700);
+        setTitle("Symbol App");
+
+        // Adding instruction message
+        TextArea instruction = new TextArea(
+            "Think of any two digit number. Now reverse it and find the difference 
+            of them.\n" +
+            "Now find the number you got and remember the symbol from the panel 
+            below.\n" +
+            "Don't tell me, I'll read your mind! Hit the below button when you 
+            are ready to see the magic!",
+            5, 60, TextArea.SCROLLBARS_NONE
+        );
+        instruction.setEditable(false);
+        instruction.setFont(new Font("Arial", Font.PLAIN, 16));
+        add(instruction, BorderLayout.NORTH);
+
+        // Panel for symbols
+        Panel symbolPanel = new Panel(new GridLayout(11, 9));
+        for (int i = 0; i < 99; i++) {
+            String symbol = (i % 9 == 0) ? specialSymbol : Character.toString((char) 
+            (33 + (i % 94)));
+            symbolLabels[i] = new Label(i + ": " + symbol); // Numbering symbols
+            symbolLabels[i].setAlignment(Label.CENTER);
+            symbolPanel.add(symbolLabels[i]);
+        }
+        add(symbolPanel, BorderLayout.CENTER);
+
+        // Panel for submit button
+        Panel controlPanel = new Panel(new FlowLayout());
+        submitButton = new Button("Chin Tapak Dum Dum");
+        submitButton.setFont(new Font("Times New Roman", Font.BOLD, 15));
+        submitButton.setPreferredSize(new Dimension(200, 60));
+        submitButton.addActionListener(this);
+        controlPanel.add(submitButton);
+        add(controlPanel, BorderLayout.SOUTH);
+
+        // Setting up the window close event
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+            }
+        });
+
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        // Clear the current content and display the selected symbol
+        if (ae.getSource() == submitButton) {
+            removeAll();
+            setLayout(new BorderLayout());
+            Label resultLabel = new Label(selectedSymbol, Label.CENTER);
+            resultLabel.setFont(new Font("Arial", Font.BOLD, 50));
+            add(resultLabel, BorderLayout.CENTER);
+            validate();
+            repaint();
+        }
+    }
+
+    public static void main(String[] args) {
+        new SymbolApp();
+    }
+}
+\end{verbatim}
+\newpage
 
 \subsection{Entry 4: Shuvajit Mondal}
 \textbf{Department: Forensic Science and Technology} \\
