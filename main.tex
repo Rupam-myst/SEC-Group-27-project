@@ -11,22 +11,20 @@
 \geometry{a4paper, margin=1in}
 
 % Title for the cover page
-\title{\Huge \textbf{Lab Notebook}\\[1.5cm]}
+\title{\Huge \textbf{Lab Notebook}}
 \author{}
 \date{}
-
-\begin{document}
 
 % Cover Page
 \begin{titlingpage}
     \centering
-    \vspace*{4cm}
-    {\Huge \bfseries Lab Notebook}\\[1.5cm]
+    {\Huge \bfseries Lab Notebook}
     
     % Placeholder for logo/image
-    \includegraphics[width=0.2\textwidth]{example-image} \\[1cm]
+    \includegraphics[width=1 \textwidth]{makaut-logo-1.png} 
     
-    {\Large \textbf{Prepared by:}} \\[1cm]
+    
+    {\Large \textbf{Prepared by:}} 
     
     % Names and details in tabular format for better alignment
     \begin{tabular}{lll}
@@ -53,52 +51,326 @@
 
 \newpage
 
+% Acknowledgment Page
+\section*{\Huge Acknowledgment}
+
+We would like to express our sincere gratitude to our professors, \textbf{Ayan Ghosh} and \textbf{Pabitra Pal}, for their valuable guidance and support throughout this project. Special thanks to our classmates and family members for their help and encouragement. This work has greatly contributed to our understanding of LaTeX and software tools.
+
+\vspace{2cm}
+
+\textbf{Signatures of Group Members:}
+
+\vspace{1cm}
+
+\begin{tabbing}
+    \hspace{3cm} \= \rule{7cm}{0.5pt} \= Rupam Mallick \kill
+    \hspace{3cm} \= \rule{7cm}{0.5pt} \> \textbf{Rupam Mallick} \\
+    \vspace{1cm} \\
+    \hspace{3cm} \= \rule{7cm}{0.5pt} \> \textbf{Sohani Mondal} \\
+    \vspace{1cm} \\
+    \hspace{3cm} \= \rule{7cm}{0.5pt} \> \textbf{Arijit Podder} \\
+    \vspace{1cm} \\
+    \hspace{3cm} \= \rule{7cm}{0.5pt} \> \textbf{Shuvajit Mondal} \\
+    \vspace{1cm} \\
+    \hspace{3cm} \= \rule{7cm}{0.5pt} \> \textbf{Ayon Halder}
+\end{tabbing}
+
+\vfill
+\textbf{Date: September 23, 2024}
+
+
 % Index page
-\section*{Index}
-\tableofcontents
+
+\section*{Context}
+
+This lab notebook documents the various assignments and projects undertaken by the students of BSC IT (CS), BSC IT (AI), Forensic Science and Technology, and BSC IT Data Science. Each entry provides detailed steps, code implementations, and explanations regarding the tasks performed during the semester. The focus is on practical applications of software tools, version control systems, and development environments.
+
+\begin{itemize}
+    \item \textbf{Rupam Mallick} – Created the front page and index layout using \LaTeX, ensuring proper document structure and formatting. Additionally, produced a documentary on how to create a CV, detailing each step and providing guidelines for an effective resume.
+
+    \item \textbf{Sohani Mondal} – Published a C language calculator project to GitHub, detailing the process of repository creation, file upload, and version control using GitHub Desktop.
+    
+    \item \textbf{Arijit Podder} – Fixed the user interface issues in a mind reader application by adjusting button proportions and improving the layout before submitting the changes via a pull request on GitHub.
+    
+    \item \textbf{Shuvajit Mondal} – Provided a comprehensive introduction to \LaTeX, highlighting key features like document structuring, mathematical typesetting, and figure handling.
+    
+    \item \textbf{Ayon Halder} – Demonstrated proficiency in Git branching, merging, and conflict resolution through a detailed lab report on GitHub repository management and conflict resolution techniques..
+
+\end{itemize}
+
 \newpage
 
-% Lab Notebook Entries
-\section{Lab Notebook Entries}
+% Title Information
+\title{\Huge How to Create a CV in \LaTeX}
+\author{\Large Name: Rupam Mallick \\
+Semester: 2 \\
+Department: B.Sc IT (CS) \\
+Course: B.Sc in IT (Cyber Security) \\
+Subject: Software Tools and Technology \\
+Session: 2023-24 \\
+Roll No: 30085323014 \\
+Registration No: 233002410591}
+\date{}
 
-\subsection{Entry 1: Rupam Mallick}
-\textbf{Department: BSC IT (CS)} \\
-\textbf{Roll No.: 30085323014} \\
 
-\textbf{Task:} \\
-Front page and index page creation.
 
-\textbf{Details:} \\
-Write the details about what was done for the front page and index creation, including the steps followed, software used, and any relevant notes.
+\maketitle
 
-\subsection{Entry 2: Sohani Mondal}
-\textbf{Department: BSC IT (CS)} \\
-\textbf{Roll No.: 30085323004} \\
 
-\textbf{Task:} \\
-Create a local repository. Build a C program of a calculator in the local repository, commit, and publish it as a public repository.
 
-\textbf{Details:} \\
-Here you will describe the process of creating the repository, writing the C code for the calculator, and steps involved in publishing the repository.
+\section{\LARGE Explanation of the \LaTeX Code for the CV}
 
-\subsection{Entry 3: Arijit Podder}
-\textbf{Department: BSC IT (AI)} \\
-\textbf{Roll No.: 30054623001} \\
+\subsection*{\Large Document Class}
+The document is defined using the article class with A4 paper size and 10pt font:
+\begin{verbatim}
+\documentclass[a4paper,10pt]{article}
+\end{verbatim}
 
-\textbf{Task:} \\
-Edit a mind reader application.
+\subsection*{\Large Packages Used}
+The following packages are used:
+\begin{itemize}
+    \item \verb|\usepackage{graphicx}|: For including images (used for the photo).
+    \item \verb|\usepackage[margin=1in]{geometry}|: Defines the page margins.
+    \item \verb|\usepackage{enumitem}|: Customizes list formatting.
+    \item \verb|\usepackage{setspace}|: For managing line spacing.
+    \item \verb|\usepackage{parskip}|: Adjusts spacing between paragraphs.
+\end{itemize}
 
-\textbf{Details:} \\
+\subsection*{\Large Sections in the CV}
+\begin{itemize}
+    \item \textbf{Photo and Name}: This section creates a two-column layout to place the image on one side and the name on the other:
+    \begin{verbatim}
+    \begin{minipage}[t]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{image.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.65\textwidth}
+        \Huge\textbf{RUPAM MALLICK}
+    \end{minipage}
+    \end{verbatim}
 
-\title{Mind Reader Application - Lab Assignment}
-\author{Name : Arijit Podder}
+    \item \textbf{Objective}: The objective section explains the candidate's motivation:
+    \begin{verbatim}
+    \section*{Objective}
+    Motivated cybersecurity student...
+    \end{verbatim}
+
+    \item \textbf{Education}: This section lists educational background:
+    \begin{verbatim}
+    \section*{Education}
+    \textbf{BSc in Cyber Security} ...
+    \end{verbatim}
+
+    \item \textbf{Certifications}: A bulleted list for certifications:
+    \begin{verbatim}
+    \section*{Certifications}
+    \begin{itemize}
+        \item Google Cybersecurity Specialization...
+    \end{itemize}
+    \end{verbatim}
+
+    \item \textbf{Skills}: Another bulleted list to showcase technical skills:
+    \begin{verbatim}
+    \section*{Skills}
+    \begin{itemize}
+        \item Network Security...
+    \end{itemize}
+    \end{verbatim}
+
+    \item \textbf{Interests}: Lists areas of personal interest:
+    \begin{verbatim}
+    \section*{Interests}
+    \begin{itemize}
+        \item Integrating robotics with cybersecurity...
+    \end{itemize}
+    \end{verbatim}
+
+    \item \textbf{References}: References available on request:
+    \begin{verbatim}
+    \section*{References}
+    Available upon request.
+    \end{verbatim}
+\end{itemize}
+
+\subsection*{\Large Document Settings}
+The following setting removes paragraph indentation:
+\begin{verbatim}
+\setlength{\parindent}{0pt}
+\end{verbatim}
+
+\section*{Conclusion}
+This notebook serves as a reference for understanding key software tools and development methodologies applied during the course.
+
+\title{Publishing My C Language Calculator to a GitHub Repository Using GitHub Desktop Lab Assignment}
+\author{Name : Sohani Mondal}
 \date{Semester : 2\\
 Department : Information Science \\
-Course : B.Sc in IT (Artificial Intelligence) \\
+Course : B.Sc in IT (Cyber Security) \\
 Subject : Software Tools and Technology \\
 Session : 2023-24 \\
-Roll No : 30054623001 \\
-Registration No : 233002410553}
+Roll No : 30085323004 \\
+Registration No : 233002410581}
+
+\maketitle
+\section*{Publishing My C Language Calculator to a GitHub Repository Using GitHub Desktop}
+\section*{Prerequisites}
+Before starting, I made sure to have the following:
+
+\begin{itemize}
+\item \textbf{A GitHub account :} I needed this to create and manage my repositories.
+\item \textbf{GitHub Desktop installed :} This is the tool I used to interact with GitHub from my desktop.
+\item \textbf{My C language calculator project files :} I had the project stored locally on my computer, ready for upload.
+
+\end{itemize}
+\section*{Step 1: Create a New Repository on GitHub}
+\begin{enumerate}
+    \item \textbf{Log in to GitHub :} I logged into my GitHub account through the web browser.
+    \item \textbf{Start a new repository :} I clicked the \textbf{+} icon at the top right and selected \textbf{New repository}.
+    \item \textbf{Name the repository :} I named it \texttt{C-Calculator}.
+    \item \textbf{Add a description (optional) :} I briefly described the purpose of the repository.
+    \item \textbf{Choose visibility :} I selected whether to keep the repository Public or Private.
+    \item \textbf{Skip initialization :} I left the README, .gitignore, and license unchecked to add them later from my local files.
+    \item \textbf{Create the repository :} I clicked \textbf{Create repository} to complete the setup.
+
+\end{enumerate}
+\section*{Step 2: Clone the Repository Using GitHub Desktop}
+\begin{enumerate}
+     \item \textbf{Open GitHub Desktop :} I launched the GitHub Desktop application.
+    \item \textbf{Clone the repository :} From the \textbf{File} menu, I selected \textbf{Clone Repository}.
+    \item \textbf{Paste the repository URL :} I pasted the URL from my GitHub repository into the \textbf{URL} tab.
+    \item \textbf{Select a local path :} I chose the directory on my computer where the repository would be cloned.
+    \item \textbf{Complete cloning :} I clicked \textbf{Clone} to download the repository locally.
+
+\end{enumerate}
+\section*{Step 3 : Add My Project Files to the Repository}
+\begin{enumerate}
+ \item \textbf{Copy the project files :} I moved the C language calculator files into the cloned repository directory.
+    \item \textbf{View changes in GitHub Desktop :} In GitHub Desktop, I saw the newly added files listed as uncommitted changes.
+
+\end{enumerate}
+
+\section*{Step 4 : Commit My Changes}
+\begin{enumerate}
+    \item \textbf{Prepare a commit message :} I wrote a commit message like \texttt{Initial commit with calculator source code}.
+    \item \textbf{Commit to main :} I clicked \textbf{Commit to main} to save the changes locally.
+
+\end{enumerate}
+
+\section*{Step 5 : Publish the Repository}
+\begin{enumerate}
+ \item \textbf{Publish the repository :} After committing, I clicked the \textbf{Publish repository} button in GitHub Desktop to upload it to GitHub.
+    \item \textbf{Check privacy settings :} I ensured that the \textbf{Keep this code private} option was unchecked to make the project public.
+    \item \textbf{Complete publishing :} I clicked \textbf{Publish repository} to finalize the process.
+
+\end{enumerate}
+
+\section*{Step 6: Verify the Repository on GitHub}
+\begin{enumerate}
+     \item \textbf{Visit GitHub :} I opened GitHub in my browser and logged in if needed.
+    \item \textbf{Locate the repository :} I went to my profile and checked that all the project files were uploaded and displayed correctly in the repository.
+
+\end{enumerate}
+
+\newpage
+\section*{Conclusion}
+After successfully creating a GitHub repository for my C language calculator project, I utilized GitHub Desktop to add the project files, committed the changes, and published it to GitHub. By making it public, I’ve ensured the project is accessible for others to view and collaborate on. This experience enhanced my organizational skills, provided hands-on experience with version control, and allowed me to gain deeper insight into managing public code repositories. Engaging with Git in this way solidified my understanding of the workflow, from local changes to remote collaboration, and has given me a sense of accomplishment in making my project visible and accessible.
+\section*{C Language Calculator Code}
+\begin{verbatim}
+// C Language Calculator Program
+#include <stdio.h>
+void add();
+void subtract();
+void multiply();
+void divide();
+
+int main() {
+    int choice;
+  while (1) {
+        printf("\nSimple C Calculator\n");
+        printf("1. Addition\n");
+        printf("2. Subtraction\n");
+        printf("3. Multiplication\n");
+        printf("4. Division\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                add();
+                break;
+            case 2:
+                subtract();
+                break;
+            case 3:
+                multiply();
+                break;
+            case 4:
+                divide();
+                break;
+            case 5:
+                printf("Exiting...\n");
+                return 0;
+            default:
+                printf("Invalid choice! Please select a valid option.\n");
+        }
+    }
+}
+
+// Function for addition
+void add() {
+    float num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+    printf("Result: %.2f\n", num1 + num2);
+}
+
+// Function for subtraction
+void subtract() {
+    float num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+    printf("Result: %.2f\n", num1 - num2);
+}
+
+// Function for multiplication
+void multiply() {
+    float num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+    printf("Result: %.2f\n", num1 * num2);
+}
+
+// Function for division
+void divide() {
+    float num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+    if (num2 != 0)
+        printf("Result: %.2f\n", num1 / num2);
+    else
+        printf("Error! Division by zero.\n");
+}
+\end{verbatim}.
+
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{ Mind Reader Application - Lab Assignment}
+\author{\Large Name: Arijit Podder \\
+Semester: 2 \\
+Department: Information Science \\
+Course: B.Sc in IT (Artificial Intelligence) \\
+Subject: Software Tools and Technology \\
+Session: 2023-24 \\
+Roll No: 30054623001 \\
+Registration No: 233002410553}
+\date{}
+
+
 
 \maketitle
 
@@ -112,7 +384,7 @@ Your professor created a mind reader application and wants you to try it out. Af
     \item I used GitHub Desktop to clone the repository:\\ 
     \url{https://github.com/GeekAyan/STT}
     \item Then I opened GitHub Desktop, clicked on "File" then "Clone Repository", pasted the URL, and selected my local directory.
-    \item Navigate to the project directory.
+    \item After that I navigate to the project directory.
 \end{itemize}
 
 \subsection*{2. Run the Application}
@@ -133,14 +405,14 @@ Your professor created a mind reader application and wants you to try it out. Af
 \subsection*{4. Fix the Button Size}
 \begin{itemize}
     \item Analyze the layout code that controls the button's appearance.
-    \item Adjust the width and height properties or use appropriate CSS/JavaFX adjustments to make the button proportionate.
+    \item Adjust the width and height properties to make the button proportionate.
     \item Test the application to ensure the button now displays correctly and does not affect other UI elements.
 \end{itemize}
 
 \subsection*{5. Commit and Push the Changes}
 \begin{itemize}
-    \item Commit the changes with a descriptive message: \texttt{git commit -m "Improve Button Proportions and Renamed the Submit Button"}.
-    \item Push the changes to your forked repository on GitHub.
+    \item Commit the changes with a descriptive message: \texttt{git commit - "Improve Button Proportions and Renamed the Submit Button"}.
+    \item Then I push the changes to my forked repository on GitHub.
 \end{itemize}
 
 \subsection*{6. Create a Pull Request}
@@ -154,7 +426,7 @@ Your professor created a mind reader application and wants you to try it out. Af
 
 \subsection*{7. Review and Merge}
 \begin{itemize}
-    \item Wait for the repository owner to review my pull request.
+    \item Then I wait for the repository owner to review my pull request.
     \item If accepted, the changes will be merged into the main project.
 \end{itemize}
 
@@ -248,29 +520,26 @@ public class SymbolApp extends Frame implements ActionListener {
 \end{verbatim}
 \newpage
 
-\subsection{Entry 4: Shuvajit Mondal}
-\textbf{Department: Forensic Science and Technology} \\
-\textbf{Roll No.: 30059223005} \\
-
-\textbf{Task: \documentclass{article}
-
-\usepackage{amsmath} % For advanced math typesetting
-\usepackage{graphicx} % For including images
 
 \title{Introduction to \LaTeX}
 \author{Shuvajit Mondal}
 \date{\today}
 
-\begin{document}
 
 \maketitle
+
+\begin{flushleft}
+Name: Shuvajit Mondal \\
+Roll No.: 30059223005 \\
+Dept: Forensic Science and Technology
+\end{flushleft}
 
 \begin{abstract}
 This document serves as a brief introduction to \LaTeX, a widely-used typesetting system. It covers the basics of document structure, formatting, mathematical typesetting, and features like cross-referencing, tables, and figure handling.
 \end{abstract}
 
-\section{What is \LaTeX?}
-\LaTeX{} is a high-quality typesetting system that is widely used for producing scientific and technical documents. It is not a word processor; instead, \LaTeX{} allows authors to focus on content rather than design, with an emphasis on logical structure. Developed in the 1980s by Leslie Lamport, \LaTeX{} builds on Donald Knuth’s \TeX{}, adding macros to simplify document production.
+\section*{1.What is \LaTeX?}
+\LaTeX{} is a high-quality typesetting system that is widely used for producing scientific and technical documents. It is not a word processor; instead, \LaTeX{} allows authors to focus on content rather than design, with an emphasis on logical structure. Developed in the 1980s by Leslie Lamport, \LaTeX{} builds on Donald Knuth's \TeX{}, adding macros to simplify document production.
 
 A few key features of \LaTeX{} include:
 \begin{itemize}
@@ -280,15 +549,47 @@ A few key features of \LaTeX{} include:
     \item Easy cross-referencing of sections, equations, and figures.
 \end{itemize}
 
-\section{Document Structure}
+\section*{2.Document Structure}
+Every \LaTeX{} document begins with a document class declaration, which determines the overall layout. Some common classes are \texttt{article}, \texttt{report}, and \texttt{book}. The document itself is enclosed between \texttt{\textbackslash begin\{document\}} and \texttt{\textbackslash end\{document\}}.
+
+Here's an example of a very simple \LaTeX{} document:
+
+\begin{verbatim}
+\documentclass{article}
+
+
+\title{Sample Document}
+\author{Author Name}
+\date{\today}
+
+\maketitle
+
+\section{Introduction}
+
+This is the introduction to our document.
+
+\end{verbatim}
+
+You can add sections, subsections, and paragraphs to structure your document logically. \LaTeX{} automatically numbers sections and subsections for you.
+
+\section*{3.Conclusion}
+This brief introduction to \LaTeX{} covers its fundamental concepts and features. As you become more comfortable, you can explore advanced topics such as custom commands, style files, and the extensive array of packages available for \LaTeX. It is a powerful tool that ensures professional, consistent document formatting, making it a favorite for researchers, scientists, and academic writers.
+
+A few key features of \LaTeX{} include:
+\begin{itemize}
+    \item Automatic generation of bibliographies, indexes, and tables of contents.
+    \item Handling complex mathematical notations.
+    \item Consistent and professional typography.
+    \item Easy cross-referencing of sections, equations, and figures.
+\end{itemize}
+
+\section*{4.Document Structure}
 Every \LaTeX{} document begins with a document class declaration, which determines the overall layout. Some common classes are \texttt{article}, \texttt{report}, and \texttt{book}. The document itself is enclosed between \texttt{\textbackslash begin\{document\}} and \texttt{\textbackslash end\{document\}}.
 
 Here’s an example of a very simple \LaTeX{} document:
 
 \begin{verbatim}
-\documentclass{article}
 
-\begin{document}
 
 \title{Sample Document}
 
@@ -302,7 +603,7 @@ Here’s an example of a very simple \LaTeX{} document:
 
 This is the introduction to our document.
 
-\end{document}
+\end{document
 \end{verbatim}
 
 You can add sections, subsections, and paragraphs to structure your document logically. \LaTeX{} automatically numbers sections and subsections for you.
@@ -376,25 +677,101 @@ To see the formatted output of your \LaTeX{} document, you need to compile it. T
 \section{Conclusion}
 This brief introduction to \LaTeX{} covers its fundamental concepts and features. As you become more comfortable, you can explore advanced topics such as custom commands, style files, and the extensive array of packages available for \LaTeX. It is a powerful tool that ensures professional, consistent document formatting, making it a favorite for researchers, scientists, and academic writers.
 
-\end{document}
- } \\
-Introductiion to Latex Assignment
-
-\textbf{Details:} \\
-Basics of document structure, formatting, mathematical typesetting, and features
-
-\subsection{Entry 5: Ayon Halder}
-\textbf{Department: BSC IT Data Science} \\
-\textbf{Roll No.: 30084323017} \\
-
-\textbf{Task:} \\
-Demonstrate proficiency in Git branching, merging, and conflict resolution.
-
-\textbf{Details:} \\
-Describe the steps followed to create branches, merge them, and handle conflicts. Include any code snippets or Git commands used, along with explanations.
+\title{Git Branching and Merging Lab Report}
+\author{Ayon Halder}
+\date{\today}
 
 
+\maketitle
 
+\begin{flushleft}
+Name: Ayon Halder \\
+Roll No.: 30084323017 \\
+Dept: BSC IT Data Science
+\end{flushleft}
 
+\section*{1.Lab Report}
+
+\subsection*{1.1 Objective}
+This assignment aimed to develop a strong understanding of Git branching, merging, and conflict resolution, using the GitHub Desktop as the primary tool.
+
+ \subsection*{Procedure}
+
+ \subsubsection*{1.0.1 Repository Creation}
+I opened GitHub Desktop and initialized a new repository named \texttt{git-advanced}.
+
+ \subsubsection*{1.0.2 Cloning the Repository}
+The repository was cloned to my local machine by selecting it in GitHub Desktop and clicking on the "Clone" option.
+
+ \subsubsection*{1.0.3 Branch Creation and Switching}
+A new branch called \texttt{feature-1} was created by selecting "New Branch" from the "Current Branch" dropdown.
+
+ \subsubsection*{1.0.4 Creating and Editing a File}
+I created a file named \texttt{shared.txt} in a text editor and added the following content:
+\begin{verbatim}
+This is a shared file.
+Line 1: Original content.
+Line 2: Original content.
+\end{verbatim}
+
+\subsubsection{Staging and Committing Changes}
+In GitHub Desktop, I staged \texttt{shared.txt} and committed the changes with an appropriate commit message, then clicked on "Commit to feature-1."
+
+\subsubsection{Pushing the Branch to GitHub}
+The \texttt{feature-1} branch was pushed to the remote GitHub repository using the "Push origin" button.
+
+\subsubsection{Creating a Second Branch}
+I created a second branch called \texttt{feature-2} by following the same steps as before.
+
+\subsubsection{File Checkout from Main Branch}
+I switched back to the main branch and checked out the \texttt{shared.txt} file to restore the original version.
+
+\subsubsection{File Modification on Feature-2}
+I edited the \texttt{shared.txt} file on \texttt{feature-2}, updating the second line to:
+\begin{verbatim}
+Line 2: Modified text in feature-2.
+\end{verbatim}
+
+\subsubsection{Staging and Committing Changes}
+The changes were staged and committed in GitHub Desktop with a relevant message.
+
+\subsubsection{Pushing the Feature-2 Branch}
+The \texttt{feature-2} branch was pushed to the remote repository by clicking "Push origin."
+
+\subsubsection{Switching Back to Feature-1}
+I returned to the \texttt{feature-1} branch by selecting it from the "Current Branch" dropdown.
+
+\subsubsection{Additional Modification on Feature-1}
+The second line of \texttt{shared.txt} was further modified in \texttt{feature-1} to:
+\begin{verbatim}
+Line 2: Modified text in feature-1.
+\end{verbatim}
+
+\subsubsection{Staging and Committing the Changes}
+I staged and committed the changes in GitHub Desktop, adding a suitable commit message.
+
+\subsubsection{Pushing Feature-1 Branch to GitHub}
+The updated \texttt{feature-1} branch was pushed to GitHub.
+
+\subsubsection{Merging Feature-1 into Main}
+I merged \texttt{feature-1} into the main branch by switching to the main branch and using the "Merge into Current Branch" option.
+
+\subsubsection{Merging Feature-2 into Main and Conflict Handling}
+When attempting to merge \texttt{feature-2}, a conflict occurred. I manually resolved the conflict by editing \texttt{shared.txt} in my text editor, and committed the conflict resolution in GitHub Desktop.
+
+\subsubsection{Pushing the Main Branch with Resolved Conflict}
+After resolving the conflict, I pushed the updated main branch to GitHub.
+
+\subsubsection{Deleting Feature Branches}
+Once the merging process was complete, I deleted both \texttt{feature-1} and \texttt{feature-2} from the repository in GitHub Desktop.  \subsection{Submission Materials}
+The final deliverables include:
+\begin{itemize}
+    \item Screenshots showing the commit history and branch structure on GitHub.
+    \item Screenshots from the local machine displaying the Git log and conflict resolution process.
+    \item A brief reflection on my experience with Git branching and merging.
+\end{itemize}
+
+ \subsection{Conclusion}
+This lab report outlines the steps taken to complete the Git branching and merging assignment, demonstrating proficiency in using GitHub Desktop for branching, merging, and conflict resolution.
 
 \end{document}
